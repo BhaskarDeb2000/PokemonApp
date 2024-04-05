@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+
+import "./App.css";
 
 function App() {
+  const [count, setCount] = useState([]) as any;
+  const [name, setName] = useState([]) as any;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetch("https://pokeapi.co/api/v2/pokemon");
+        const responseJson = await data.json();
+        console.log(responseJson);
+        setCount(responseJson);
+        setName(responseJson.results);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          MY NAME IS whatever
-        </a>
-      </header>
+      <p>Total Pokemon {count.count}</p>
+      {name.map(function (pokemon: any, i: number) {
+        console.log("test");
+        return <p>{pokemon.name}</p>;
+      })}
     </div>
   );
 }
