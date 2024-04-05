@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          MY NAME IS ORGHO
+          MY NAME IS whatever
         </a>
       </header>
     </div>
