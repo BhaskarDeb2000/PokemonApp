@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
+
 function App() {
   const [pokemonList, setPokemonList] = useState<any[]>([]);
   const [nextUrl, setNextUrl] = useState<string | null>(null);
