@@ -5,7 +5,7 @@ Fetch Data from pokemon open api.
 
 ## How to Run
 
-1. Clone this repository to your local machine: `https://github.com/OrghoDeb/PokemonApp.git`
+1. Clone this repository to your local machine: `https://github.com/BhaskarDeb2000/PokemonApp.git`
 2. Navigate to the project directory: `cd PokemonApp/`
 3. Install dependencies: `npm i`
 4. Start the development server: `npm start`
